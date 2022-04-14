@@ -1,0 +1,12 @@
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\bin\Debug\net5.0\DotNet-back.Model.deps.json
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\bin\Debug\net5.0\DotNet-back.Model.dll
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\bin\Debug\net5.0\ref\DotNet-back.Model.dll
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\bin\Debug\net5.0\DotNet-back.Model.pdb
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\DotNet-back.Model.csproj.AssemblyReference.cache
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\DotNet-back.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\DotNet-back.Model.AssemblyInfoInputs.cache
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\DotNet-back.Model.AssemblyInfo.cs
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\DotNet-back.Model.csproj.CoreCompileInputs.cache
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\DotNet-back.Model.dll
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\ref\DotNet-back.Model.dll
+C:\ronal\ensolvers_challenge\DotNet-back\DotNet-back.Model\obj\Debug\net5.0\DotNet-back.Model.pdb

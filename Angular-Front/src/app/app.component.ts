@@ -24,8 +24,8 @@ export class AppComponent {
   ];
 
   myValue:number | null = null;
-  createModel:TaskModel=new TaskModel();
-  updateModel:TaskModel= new TaskModel();
+  createModel:TaskModel = new TaskModel();
+  updateModel:TaskModel = new TaskModel();
   hideUpdate:boolean = true;
 
   addTask():void{
@@ -52,7 +52,6 @@ export class AppComponent {
   }
 
   updateTask():void{
-
     if(this.updateModel.name.trim() == ""){
       alert("There is nothing to edit.");
     }else if(this.myValue == null){
