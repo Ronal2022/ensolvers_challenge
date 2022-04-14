@@ -1,0 +1,17 @@
+.cabecera{
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 30px;
+    background: #fff;
+}
+
+.imagen-cabecera{
+    width: 250px;
+    height: 250px;
+    margin-left: 20px;
+
+}
+
+.distanciamiento{
+    margin-top: 20px;
+}
