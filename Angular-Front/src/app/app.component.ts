@@ -19,21 +19,15 @@ export class TaskModel {
 
 export class AppComponent {
 
-  constructor(
-    private tasksService:TasksService
-  ){
-    this.tasksService.addTask().subscribe(resp=>{
-      console.log(resp)
+  constructor(private tasksService:TasksService){
+    this.tasksService.getTasks().subscribe(resp=>{
+      this.tasks = resp; 
     })
   }
-
+  
   title:string = 'Ensolvers Crud';
 
-  tasks:TaskModel[] = [
-    { name: 'buy groceries', completed: false},
-    { name: 'Prepare weekly report', completed: false},
-    { name: 'Write to candidates', completed: false}
-  ];
+  tasks:TaskModel[] = [];
 
   myValue:number | null = null;
   createModel:TaskModel = new TaskModel();
@@ -42,18 +36,11 @@ export class AppComponent {
 
   addTask():void{
     if(this.createModel.name.trim() == ""){
-      alert("you did not enter any homework.");
+      alert("you did not enter any task.");
     }else{
     this.tasks.push(this.createModel);
     this.createModel = new TaskModel();
       alert("Task added successfully.");
-    }
-  }
-
-  deleteTask(i:number):void{
-    if(confirm("you want to delete this task?")){
-      this.tasks.splice(i,1);
-    alert("Task delete successfully.");
     }
   }
 
@@ -64,18 +51,29 @@ export class AppComponent {
   }
 
   updateTask():void{
-    if(this.updateModel.name.trim() == ""){
-      alert("There is nothing to edit.");
-    }else if(this.myValue == null){
-      alert("This task is not registered, for editing")
-    }else{
-        let i = this.myValue;
-    for(let j=0; j <this.tasks.length; j++){
-      if(i == j){
-        this.tasks[i] = this.updateModel;
-        this.updateModel = new TaskModel();
-        this.myValue = null;}
+      if(this.updateModel.name.trim() == ""){
+        alert("There is nothing to edit.");
+      }else if(this.myValue == null){
+        alert("This task is not registered, for editing")
+      }else{
+          let i = this.myValue;
+      for(let j=0; j <this.tasks.length; j++){
+        if(i == j){
+          this.tasks[i] = this.updateModel;
+          this.tasksService.updateTasks(this.updateModel).subscribe(resp=>{
+            this.tasks = resp;
+          });
+          this.myValue = null;}
+        }
       }
+    }
+
+  deleteTask(deleteApiTasks:TaskModel):void{
+    if(confirm("you want to delete this task?")){
+      this.tasksService.deleteTasks(deleteApiTasks).subscribe(resp=>{
+        this.tasks = resp;
+      })
+    alert("Task delete successfully.");
     }
   }
 }
