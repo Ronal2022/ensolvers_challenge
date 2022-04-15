@@ -15,3 +15,7 @@
 .distanciamiento{
     margin-top: 20px;
 }
+
+.tachado {
+    text-decoration: line-through;
+}

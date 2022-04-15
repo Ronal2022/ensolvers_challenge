@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 
 export class TaskModel {
     name:string;
+    completed:boolean;
 
     constructor(){
       this.name = "";
+      this.completed = false;
     }
   }
   
@@ -18,9 +20,9 @@ export class AppComponent {
   title:string = 'Ensolvers Crud';
 
   tasks:TaskModel[] = [
-    {'name': 'buy groceries'},
-    {'name': 'Prepare weekly report'},
-    {'name': 'Write to candidates'}
+    { name: 'buy groceries', completed: false},
+    { name: 'Prepare weekly report', completed: false},
+    { name: 'Write to candidates', completed: false}
   ];
 
   myValue:number | null = null;

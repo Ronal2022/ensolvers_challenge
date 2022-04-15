@@ -11,8 +11,8 @@
   <div class="row">
     <div class="col-md-12 col-lg-3">
       <img src=".\assets\imagen\imagebuhito.png" alt="Imagen Cabecera" class="imagen-cabecera img-fluid"/>
-    </div> 
-      
+    </div>
+
     <!--Formulario para agregar tareas(tasks)-->
     <!--TITULO FORMULARIO-->
     <div class="col-md-12 col-lg-9">
@@ -21,10 +21,10 @@
 
         <!--LABEL-->
         <div class="row">
-          <label 
+          <label
             for="name"
             class="col-md-12 col-lg-1 mb-2 fs-4">
-            Name: 
+            Name:
           </label>
 
         <!--IMPUT-->
@@ -38,9 +38,9 @@
               name="name"
               [(ngModel)]="createModel.name"
             />
-          </div>  
+          </div>
         </div>
-      
+
       <!--BOTON-->
         <div class="form-group">
           <div class="col-lg-10 offset-lg-1 mb-sm-3">
@@ -52,7 +52,7 @@
             </button>
           </div>
         </div>
-       
+
       </form>
     </div>
   </div>
@@ -63,14 +63,25 @@
       <h2>Read Tasks: </h2>
       <table class="table table-bordered">
         <thead>
-          <tr>
+          <tr class="margin-auto">
+            <th class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar-check text-success" viewBox="0 0 16 16">
+              <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+            </svg></th>
             <th>Tasks</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let task of tasks; let i = index">
-            <td>
+            <td class="text-center">
+              <input
+              type="checkbox"
+              class="btn-warning"
+              [(ngModel)]="task.completed"
+              />
+            </td>
+            <td [ngClass]="{'tachado': task.completed}">
               {{task.name}}
             </td>
             <td>
@@ -90,13 +101,13 @@
     <div class="col-lg-6 form-group">
       <h2>Update Tasks</h2>
         <form class="form-horizontal">
- 
+
         <!--LABEL-->
         <div class="row">
-          <label 
+          <label
             for="name"
             class="col-lg-3 fs-4">
-            Task Edit: 
+            Task Edit:
           </label>
 
         <!--IMPUT-->
@@ -110,9 +121,9 @@
               name="name"
               [(ngModel)]="updateModel.name"
             />
-          </div>  
+          </div>
         </div>
-      
+
       <!--BOTON SAVE CHANGE-->
         <div class="btn-group distanciamiento col-lg-12">
             <button
@@ -121,7 +132,7 @@
               (click)="updateTask()">
               Save Change
             </button>
-          
+
           <!--BOTON CANCEL-->
             <button
               type="reset"
