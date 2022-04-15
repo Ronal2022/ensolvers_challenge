@@ -38,8 +38,10 @@ export class AppComponent {
     if(this.createModel.name.trim() == ""){
       alert("you did not enter any task.");
     }else{
-    this.tasks.push(this.createModel);
-    this.createModel = new TaskModel();
+      this.tasksService.saveTasks(this.createModel).subscribe(resp=>{
+        this.tasks=resp;
+      })
+      this.createModel = new TaskModel();
       alert("Task added successfully.");
     }
   }
