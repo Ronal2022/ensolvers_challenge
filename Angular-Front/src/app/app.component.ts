@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TasksService } from './services/tasks.service';
 
 export class TaskModel {
     name:string;
@@ -17,6 +18,15 @@ export class TaskModel {
 })
 
 export class AppComponent {
+
+  constructor(
+    private tasksService:TasksService
+  ){
+    this.tasksService.addTask().subscribe(resp=>{
+      console.log(resp)
+    })
+  }
+
   title:string = 'Ensolvers Crud';
 
   tasks:TaskModel[] = [

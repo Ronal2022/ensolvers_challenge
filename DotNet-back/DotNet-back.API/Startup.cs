@@ -16,6 +16,8 @@ namespace DotNet_back.API
 {
     public class Startup
     {
+        private readonly string _MyCors = "MyCors";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,10 +29,21 @@ namespace DotNet_back.API
         public void ConfigureServices(IServiceCollection services)
         {
 
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DotNet_back.API", Version = "v1" });
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: _MyCors, builder =>
+                {
+                    //builder.WithOrigins("http://localhost:4200");
+                    builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+                    .AllowAnyHeader().AllowAnyMethod();                    
+                });
             });
         }
 
@@ -45,6 +58,8 @@ namespace DotNet_back.API
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(_MyCors);
 
             app.UseRouting();
 

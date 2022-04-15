@@ -10,9 +10,9 @@ namespace DotNet_back.API.Controllers
     {
         private static readonly List<TaskModel> Tasks = new List<TaskModel>
         {
-            new TaskModel{ Name = "Buy groceries"},
-            new TaskModel{ Name = "Prepare weekly report"},
-            new TaskModel{ Name = "Write to candidates"}
+            new TaskModel{ Name = "Buy groceries", Completed = false},
+            new TaskModel{ Name = "Prepare weekly report", Completed = false},
+            new TaskModel{ Name = "Write to candidates", Completed = false}
         };
 
         public TaskController()
@@ -20,8 +20,8 @@ namespace DotNet_back.API.Controllers
         }
 
         [HttpGet]
-        public List<TaskModel> Get()
-        {
+        public List<TaskModel> Get() { 
+        
             return Tasks;
         }
 
